@@ -41,7 +41,7 @@ def no_stamina():
 def no_water():
     print("No water")
 
-actions = [no_food, no_stamina, no_water]
+actions = [no_stamina, no_water]
 
 counter = 1
 
@@ -73,8 +73,6 @@ if __name__ == "__main__":
                     result = cv2.matchTemplate(cropped, template, cv2.TM_CCOEFF_NORMED)
                     _, max_val, _, max_loc = cv2.minMaxLoc(result)
                     if max_val > 0.9:  # Match threshold
-                        cv2.imwrite(f"{counter}.png", cropped)
-                        counter += 1
                         action()
                 except:
                     pass
