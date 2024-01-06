@@ -1,0 +1,28 @@
+{
+    "auto_swing": {
+        "enabled": true,
+        "swing_interval": 0.3,
+        "action": "left_click"
+    },
+    "regain_stamina": {
+        "enabled": true,
+        "pause_duration": 20.0
+    },
+    "auto_eat": {
+        "enabled": true,
+        "slots": {
+            "food": 1,
+            "water": 2
+        }
+    },
+    "auto_drop_settings": {
+        "enabled": true,
+        "items": [
+            "s",
+            "f",
+            "erry",
+            "th",
+            "w"
+        ]
+    }
+}
