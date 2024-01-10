@@ -39,13 +39,13 @@ class AutoClicker:
                     user32.keybd_event(SPACEBAR_KEYCODE, 0, KEYEVENTF_KEYUP, 0)
                 time.sleep(self.config.auto_swing.get('swing_interval', 0.1))
             
-            if time.time() - last_inventory_open > 20:
+            if time.time() - last_inventory_open > self.config.auto_drop_settings.get('drop-interval', 25):
                 self.drop_items()
                 last_inventory_open = time.time()
             
     def drop_items(self):
         pyautogui.press("f") # Open inventory
-        time.sleep(0.3)
+        time.sleep(0.2)
         
         screen_width, screen_height = pyautogui.size()
         
@@ -63,10 +63,11 @@ class AutoClicker:
                 try: drop_button_location = pyautogui.locateOnScreen('assets/drop_icon.png', confidence=0.9, region=region)
                 except pyautogui.ImageNotFoundException: print("Debug: Could not find drop icon.")
                 if drop_button_location is not None:
-                    time.sleep(0.3)
-                    pyautogui.click(drop_button_location)
-                    time.sleep(0.05) 
-            
+                    pyautogui.moveTo(drop_button_location)
+                    time.sleep(0.05)
+                    pyautogui.click()
+        time.sleep(0.3)
         pyautogui.press("esc")
+        time.sleep(0.3)
         print("Dropped items")
         
