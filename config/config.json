@@ -2,7 +2,7 @@
     "stop_program_keybind": "f4",
     "auto_swing": {
         "enabled": true,
-        "swing_interval": 0.3,
+        "swing_interval": 0.2,
         "action": "left_click"
     },
     "regain_stamina": {
@@ -12,18 +12,15 @@
     "auto_eat": {
         "enabled": true,
         "slots": {
-            "food": 1,
-            "water": 2
+            "food": 4,
+            "water": 5
         }
     },
     "auto_drop_settings": {
         "enabled": true,
+        "drop-interval": 30,
         "items": [
-            "s",
-            "f",
-            "erry",
-            "th",
-            "w"
+            "e"
         ]
     }
 }
