@@ -1,4 +1,5 @@
 {
+    "stop_program_keybind": "f4",
     "auto_swing": {
         "enabled": true,
         "swing_interval": 0.3,
